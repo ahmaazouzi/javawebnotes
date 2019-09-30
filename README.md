@@ -13,4 +13,5 @@ ServletContext s = HttpServlet.getServletContext();
 	<param-value>msql</param-value>
 </context-param>
 ```
-- `<context-param>` should be listed under the `web-app` tag. Context params are app-wide. For specific servlets, **init params** are used
+- `<context-param>` should be listed under the `web-app` tag. Context params are app-wide. For specific servlets, **init params** are used.
+- `@MultipartConfig` annotation is used to control file upload. In a file descriptor, `<multipart-config>` tag can be put in a `<servlet>` tag to do the same job.

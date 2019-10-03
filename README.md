@@ -15,3 +15,7 @@ ServletContext s = HttpServlet.getServletContext();
 ```
 - `<context-param>` should be listed under the `web-app` tag. Context params are app-wide. For specific servlets, **init params** are used.
 - `@MultipartConfig` annotation is used to control file upload. In a file descriptor, `<multipart-config>` tag can be put in a `<servlet>` tag to do the same job.
+
+## JSP:
+- **JSPs** combine java code, html tags, built-in jsp tags, custom jsp tags and expression language. They are used to create dynamic html pages.
+- JSPs are fancy servlets. They are compiled into java code.

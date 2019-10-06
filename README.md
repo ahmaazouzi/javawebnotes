@@ -1,6 +1,6 @@
 # Java Notes:
 ## Servlets:
-- The name of a servlet is s different from the servlet class. A servlet class can have multiple names and different urls. Imagine having a servlet class that implement the same logic for two different servlets that conntect to two different databases. Basically one servlet class can map to multiple servlet names and urls.
+- The name of a servlet is s different from the servlet class. A servlet class can have multiple names and different urls. Imagine having a servlet class that implement the same logic for two different servlets that connect to two different databases. Basically one servlet class can map to multiple servlet names and urls.
 - To configure a project to run on a local container like tomcat, right click tomcat on Servers in the bottom in eclipse (I know this is bad) and click on add/remove.
 - **Context params** get defined in the deployment descriptor `web.xml` and one can get them with
 ```java
@@ -38,7 +38,7 @@ ServletContext s = HttpServlet.getServletContext();
 JSP comments are remove jsp blocks all together. They are neither compiled to java nor sent to the browser.
 - **Imports** are done in different similarly to java code in two slightly differnt ways within directives:
 ```jsp
-<%-- You can have imports seperated by commas or have different imports within separate directives -->
+<%-- You can have imports separated by commas or have different imports within separate directives -->
 <%@ page .... import="java.something.Something, java. something.SomethingElse" %>
 <%@ page import="java.something.Something>%
 <%@ page import="java.something.SomethingElse>%
@@ -55,5 +55,14 @@ JSP comments are remove jsp blocks all together. They are neither compiled to ja
 <jsp:include page="/path/index.jsp">
 ```
 	3. They are also used to **include tag libraries**.
-
-
+- **`<jsp>` Tag**: JSP's support tags with the XMLNS `jsp`. This is an old way of doing things. An example is `<jsp:include>` used to include a jsp. `<jsp:forward>` is used to forward a page. Similar tags include `<jsp:useBean>`, `<jsp:getProperty>`, `<jsp:setProperty>`, `<jsp:plugin>` (for applet plugins).
+- **JSP implicit variables** are:
+	1. **request:** You can do with it what you can do with a request in a servlet such as setting and getting parameters, attributes.. etc.
+	2. **response:** Similar to request.
+	3. **out:** similar to `getWriter` of `HttpServletResponse`. 
+	4. **application:** same as `servletContext`.
+	5. **config:** Allows you to access configuration params and such.
+	6. **pageContext:** used for forwarding, accessing session and request attributes and all that jazz.
+	7. **session:** `HttpSession` and all that.
+	8. **page:** Equivalent to the `this` variable of the JSP servlet object. Might never need to be used.
+	9. **exception:** for errors.

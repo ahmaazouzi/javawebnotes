@@ -66,3 +66,4 @@ JSP comments are remove jsp blocks all together. They are neither compiled to ja
 	7. **session:** `HttpSession` and all that.
 	8. **page:** Equivalent to the `this` variable of the JSP servlet object. Might never need to be used.
 	9. **exception:** for errors.
+- **Java in JSPs:** straight java code can be used in JSPs, but it's a bad idea due the principle of separation of concerns. JSP's are intended for creating the view or presentation layer. UI developers shouldn't be bogged down by java code inside JSP's. Let them deal with the UI, while the application logic should stay in the backend inproper java classes and servlets. WHAT???!!!
